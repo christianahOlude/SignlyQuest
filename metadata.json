@@ -1,0 +1,5 @@
+{
+  "name": "Sign Quest - Deaf Training Fun",
+  "description": "An interactive and playful web application designed to help users learn sign language through a fun quiz format. Users can register their name, and then play a game where they watch sign language videos and select the correct meaning from multiple-choice options. The app tracks scores and provides a fun learning experience.",
+  "requestFramePermissions": []
+}
