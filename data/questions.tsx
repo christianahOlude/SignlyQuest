@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // import { Question } from '../types';
 //
 // export const questions: Question[] = [
@@ -28,10 +30,12 @@
 //     fetchQuestions();
 // ];
 
-export const fetchQuestions = () => {
+export const questions = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/questions');
-    }catch (e) {
-
+        const response = await axios.get('https://signly-nc3i.onrender.com/api/questions/question');
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching questions:', error);
+        throw error;
     }
 }

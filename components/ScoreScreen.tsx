@@ -1,7 +1,6 @@
 
 // @ts-ignore
 import React from 'react';
-import { SparklesIcon, ArrowPathIcon } from './common/Icons';
 
 interface ScoreScreenProps {
   score: {
@@ -15,6 +14,7 @@ interface ScoreScreenProps {
 // @ts-ignore
 const ScoreScreen: React.FC<ScoreScreenProps> = ({ score, totalQuestions, onRestart }) => {
   const percentage = Math.round((score.correct / totalQuestions) * 100);
+  // @ts-ignore
   const message =
     percentage === 100
       ? "Perfect Score! You're a natural!"

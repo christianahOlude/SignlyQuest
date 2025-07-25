@@ -4,7 +4,9 @@ export interface User {
 }
 
 export interface Question {
-  options: string[];
+  id: string | number;
   questionVideoUrl: string;
+  options: string[];
   answer: string;
 }
+

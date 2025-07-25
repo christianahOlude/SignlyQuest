@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { User } from './types';
 import useLocalStorage from './hooks/useLocalStorage';
 import Register from './components/Register';
