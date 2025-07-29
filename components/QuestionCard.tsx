@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Question } from '../types';
+import { Question, Option } from '../types';
 import { CheckIcon, XMarkIcon } from './common/Icons';
 
 interface QuestionCardProps {
@@ -16,25 +16,24 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onAnswer, questio
   useEffect(() => {
     setSelectedOption(null);
     setIsAnswered(false);
-  }, [question]);
+  }, [question._id]);
 
-  const handleOptionClick = (option: string) => {
+  const handleOptionClick = (option: Option) => {
     if (isAnswered) return;
 
-    setSelectedOption(option);
+    setSelectedOption(option._id);
     setIsAnswered(true);
-    const isCorrect = option === question.answer;
-    onAnswer(isCorrect);
+    onAnswer(option._id === question.answer._id);
   };
 
-  const getButtonClass = (option: string) => {
+  const getButtonClass = (option: Option) => {
     if (!isAnswered) {
       return 'bg-white hover:bg-slate-100 text-slate-700';
     }
-    if (option === question.answer) {
+    if (option._id === question.answer._id) {
       return 'bg-green-500 text-white transform scale-105';
     }
-    if (option === selectedOption && option !== question.answer) {
+    if (option._id === selectedOption && option._id !== question.answer._id) {
       return 'bg-red-500 text-white';
     }
     return 'bg-white text-slate-700 opacity-60';
@@ -71,14 +70,14 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onAnswer, questio
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {question.options.map((option) => (
           <button
-            key={option}
+            key={option._id}
             onClick={() => handleOptionClick(option)}
             disabled={isAnswered}
             className={`w-full p-4 rounded-lg font-bold text-lg border-2 border-transparent transition-all duration-300 ease-in-out flex items-center justify-center gap-3 ${getButtonClass(option)}`}
           >
-            {option}
-            {isAnswered && option === question.answer && <CheckIcon className="w-6 h-6" />}
-            {isAnswered && option === selectedOption && option !== question.answer && <XMarkIcon className="w-6 h-6" />}
+            {option.text}
+            {isAnswered && option._id === question.answer._id && <CheckIcon className="w-6 h-6" />}
+            {isAnswered && option._id === selectedOption && option._id !== question.answer._id && <XMarkIcon className="w-6 h-6" />}
           </button>
         ))}
       </div>

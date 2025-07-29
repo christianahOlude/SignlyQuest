@@ -4,9 +4,15 @@ export interface User {
 }
 
 export interface Question {
-  id: string | number;
+  _id: string;
   questionVideoUrl: string;
-  options: string[];
-  answer: string;
+  options: Option[];
+  answer: Option;
+}
+
+export interface Option {
+  _id: string;
+  text: string;
+  isCorrect?: boolean;
 }
 
