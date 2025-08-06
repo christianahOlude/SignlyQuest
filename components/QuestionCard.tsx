@@ -44,13 +44,13 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onAnswer, questio
       <div className="mb-4">
         <p className="text-sm font-bold text-indigo-500">Question {questionNumber} of {totalQuestions}</p>
         <div className="w-full bg-slate-200 rounded-full h-2.5 mt-1">
-          <div 
-            className="bg-indigo-500 h-2.5 rounded-full transition-all duration-500" 
+          <div
+            className="bg-indigo-500 h-2.5 rounded-full transition-all duration-500"
             style={{ width: `${(questionNumber / totalQuestions) * 100}%` }}
           ></div>
         </div>
       </div>
-      
+
       <p className="text-2xl font-bold text-slate-800 text-center mb-4">What is the sign for...</p>
 
       <div className="w-full aspect-video bg-slate-800 rounded-lg overflow-hidden shadow-inner mb-6">

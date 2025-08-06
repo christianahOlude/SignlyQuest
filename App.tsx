@@ -19,7 +19,7 @@ const App: React.FC = () => {
   return (
     <div className="bg-slate-100 min-h-screen w-full flex flex-col items-center justify-center p-4">
       <header className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-black text-indigo-600">Sign Quest</h1>
+        <h1 className="text-2xl font-black text-indigo-600">Signly Quest</h1>
         {user && (
           <button 
             onClick={handleLogout}

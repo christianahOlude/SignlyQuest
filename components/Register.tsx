@@ -19,7 +19,7 @@ const Register: React.FC<RegisterProps> = ({ onRegister }) => {
   return (
     <div className="bg-white p-8 rounded-2xl shadow-lg text-center max-w-md mx-auto animate-fade-in-up">
       <div className="flex justify-center items-center mb-4">
-        <h2 className="text-4xl font-black text-slate-800 mr-3">Welcome to Sign Quest!</h2>
+        <h2 className="text-4xl font-black text-slate-800 mr-3">Welcome to Signly Quest!</h2>
         <HandWaveIcon className="w-12 h-12 text-yellow-400" />
       </div>
       <p className="text-slate-600 mb-8">Let's get started on your sign language adventure. What should we call you?</p>
