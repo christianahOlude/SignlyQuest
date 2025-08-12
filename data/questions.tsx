@@ -35,7 +35,7 @@ export const questions = async () => {
         const response = await axios.get('https://signly-nc3i.onrender.com/api/questions/question');
         return response.data;
     } catch (error) {
-        console.error('Error fetching questions:', error);
+        // console.error('Error fetching questions:', error);
         throw error;
     }
 }
